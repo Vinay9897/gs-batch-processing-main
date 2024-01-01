@@ -32,11 +32,14 @@ public class BatchConfiguration {
 	   .build();
 	}
 	
+	// Processor
 	@Bean
 	public PersonItemProcessor processor() {
 		return new PersonItemProcessor();
 	}
 	
+	
+	// Writer
 	@Bean
 	public JdbcBatchItemWriter<Person> writer(DataSource dataSource){
 		return new JdbcBatchItemWriterBuilder<Person>()

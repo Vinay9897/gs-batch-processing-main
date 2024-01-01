@@ -10,8 +10,8 @@ public class PersonItemProcessor implements ItemProcessor<Person, Person>  {
 	
 	@Override
 	public Person process(final Person person) throws Exception {
-		final String firstName = person.firstName().toUpperCase();
-		final String lastName = person.lastName().toUpperCase();
+		final String firstName = person.getFirstName().toUpperCase();
+		final String lastName = person.getLastName().toUpperCase();
 		final String fullName = firstName+lastName;
 		
 		final Person  transformPerson = new Person(firstName, lastName, fullName);

@@ -11,10 +11,12 @@ public class PersonItemProcessor implements ItemProcessor<Person, Person> {
 
 	@Override
 	public Person process(final Person person) {
-		final String firstName = person.firstName().toUpperCase();
-		final String lastName = person.lastName().toUpperCase();
+		final String firstName = person.getFirstName().toUpperCase();
+		final String lastName = person.getLastName().toUpperCase();
+		
+		final String fullName = firstName + lastName;
 
-		final Person transformedPerson = new Person(firstName, lastName);
+		final Person transformedPerson = new Person(firstName, lastName, fullName);
 
 		log.info("Converting (" + person + ") into (" + transformedPerson + ")");
 
